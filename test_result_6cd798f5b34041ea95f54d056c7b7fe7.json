@@ -1,0 +1,122 @@
+[
+  {
+    "question": "What will be the output of the following code snippet? `print(type(5/2))`  (1",
+    "options": [
+      "(a) <class 'float'>",
+      "(b) <class 'int'>",
+      "(c) <class 'str'>",
+      "(d) <class 'bool'>"
+    ],
+    "correct_answer": "a",
+    "user_answer": "(a) <class 'float'>",
+    "marks": 1
+  },
+  {
+    "question": "Which keyword is used to define a function in Python? (1",
+    "options": [
+      "(a) def",
+      "(b) func",
+      "(c) function",
+      "(d) define"
+    ],
+    "correct_answer": "a",
+    "user_answer": "(a) def",
+    "marks": 1
+  },
+  {
+    "question": "What is the purpose of the `len()` function in Python? (1",
+    "options": [
+      "(a) To determine the length of a sequence (string, list, tuple, etc.)",
+      "(b) To add elements to a sequence",
+      "(c) To remove elements from a sequence",
+      "(d) To sort a sequence"
+    ],
+    "correct_answer": "a",
+    "user_answer": "(a) To determine the length of a sequence (string, list, tuple, etc.)",
+    "marks": 1
+  },
+  {
+    "question": "What will be the output of `print(list(range(1,5)))`? (1",
+    "options": [
+      "(a) [1, 2, 3, 4]",
+      "(b) [1, 2, 3, 4, 5]",
+      "(c) [0, 1, 2, 3, 4]",
+      "(d) Error"
+    ],
+    "correct_answer": "a",
+    "user_answer": "(a) [1, 2, 3, 4]",
+    "marks": 1
+  },
+  {
+    "question": "Which data structure is best suited for implementing a Last-In-First-Out (LIFO) stack? (1",
+    "options": [
+      "(a) List",
+      "(b) Tuple",
+      "(c) Set",
+      "(d) Dictionary"
+    ],
+    "correct_answer": "a",
+    "user_answer": "(a) List",
+    "marks": 1
+  },
+  {
+    "question": "What does the `in` operator do? (1",
+    "options": [
+      "(a) Checks if a value is present in a sequence",
+      "(b) Performs addition",
+      "(c) Performs subtraction",
+      "(d) Performs multiplication"
+    ],
+    "correct_answer": "a",
+    "user_answer": "(d) Performs multiplication",
+    "marks": 1
+  },
+  {
+    "question": "What is the result of `5**2`? (1",
+    "options": [
+      "(a) 25",
+      "(b) 10",
+      "(c) 7",
+      "(d) 0"
+    ],
+    "correct_answer": "a",
+    "user_answer": "(a) 25",
+    "marks": 1
+  },
+  {
+    "question": "Which statement correctly opens a file named \"myfile.txt\" for writing? (1",
+    "options": [
+      "(a) `f = open(\"myfile.txt\", \"r\")`",
+      "(b) `f = open(\"myfile.txt\", \"w\")`",
+      "(c) `f = open(\"myfile.txt\", \"a\")`",
+      "(d) `f = open(\"myfile.txt\")`"
+    ],
+    "correct_answer": "b",
+    "user_answer": "(a) `f = open(\"myfile.txt\", \"r\")`",
+    "marks": 1
+  },
+  {
+    "question": "What is the output of  `print(\"Hello\"[0])`? (1",
+    "options": [
+      "(a) H",
+      "(b) Hello",
+      "(c) 0",
+      "(d) Error"
+    ],
+    "correct_answer": "a",
+    "user_answer": "(a) H",
+    "marks": 1
+  },
+  {
+    "question": "What is the correct way to comment out a single line of code in Python? (1",
+    "options": [
+      "(a) # This is a comment",
+      "(b) // This is a comment",
+      "(c) /* This is a comment */",
+      "(d) 'This is a comment'"
+    ],
+    "correct_answer": "a",
+    "user_answer": "(a) # This is a comment",
+    "marks": 1
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "question": "**Question 1:** What will be the output of the following code? `print(type(5 + 2.0))`  (2",
+    "options": [
+      "(a) `<class 'float'>`",
+      "(b) `<class 'int'>`",
+      "(c) `<class 'str'>`",
+      "(d) `<class 'complex'>`"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(a) `<class 'float'>`",
+    "marks": 1,
+    "topic": "python"
+  },
+  {
+    "question": "**Question 2:** Which keyword is used to handle exceptions in Python? (1",
+    "options": [
+      "(a) `try...except`",
+      "(b) `if...else`",
+      "(c) `for...in`",
+      "(d) `while`"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(a) `try...except`",
+    "marks": 1,
+    "topic": "python"
+  },
+  {
+    "question": "**Question 3:**  What is the output of `list(range(1, 5))`? (2",
+    "options": [
+      "(a) `[1, 2, 3, 4]`",
+      "(b) `[1, 2, 3, 4, 5]`",
+      "(c) `[0, 1, 2, 3, 4]`",
+      "(d) `range(1, 5)`"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(b) `[1, 2, 3, 4, 5]`",
+    "marks": 1,
+    "topic": "python"
+  },
+  {
+    "question": "**Question 4:** Which data structure is best suited for implementing a LIFO (Last-In, First-Out) structure? (1",
+    "options": [
+      "(a) Stack (using a list)",
+      "(b) Queue (using a list)",
+      "(c) Set",
+      "(d) Dictionary"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(b) Queue (using a list)",
+    "marks": 1,
+    "topic": "python"
+  },
+  {
+    "question": "**Question 5:** What will be the output of  `my_string = \"hello\"; print(my_string[1:4])`? (2",
+    "options": [
+      "(a) `ell`",
+      "(b) `ello`",
+      "(c) `hel`",
+      "(d) `llo`"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(d) `llo`",
+    "marks": 1,
+    "topic": "python"
+  },
+  {
+    "question": "**Question 6:** Which function is used to open a file in Python? (1",
+    "options": [
+      "(a) `open()`",
+      "(b) `read()`",
+      "(c) `write()`",
+      "(d) `close()`"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(a) `open()`",
+    "marks": 1,
+    "topic": "python"
+  },
+  {
+    "question": "**Question 7:** What does the `self` parameter represent in a Python class method? (2",
+    "options": [
+      "(a) A global variable",
+      "(b) An instance of the class",
+      "(c) A static variable",
+      "(d) A class variable"
+    ],
+    "correct_answer": "**Correct Answer:** b",
+    "user_answer": "(c) A static variable",
+    "marks": 1,
+    "topic": "python"
+  },
+  {
+    "question": "**Question 8:** What is the purpose of the `__init__` method in a Python class? (1",
+    "options": [
+      "(a) Constructor, initializes object attributes",
+      "(b) Destructor, cleans up object resources",
+      "(c) A regular method",
+      "(d) A static method"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(b) Destructor, cleans up object resources",
+    "marks": 1,
+    "topic": "python"
+  },
+  {
+    "question": "**Question 9:**  Which module provides functions for working with regular expressions in Python? (1",
+    "options": [
+      "(a) `re`",
+      "(b) `math`",
+      "(c) `os`",
+      "(d) `random`"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(a) `re`",
+    "marks": 1,
+    "topic": "python"
+  },
+  {
+    "question": "**Question 10:** What does the `lambda` keyword create in Python? (2",
+    "options": [
+      "(a) An anonymous function",
+      "(b) A class",
+      "(c) A module",
+      "(d) A variable"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(a) An anonymous function",
+    "marks": 1,
+    "topic": "python"
+  }
+]

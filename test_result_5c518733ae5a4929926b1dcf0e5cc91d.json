@@ -1,0 +1,132 @@
+[
+  {
+    "question": "**Question 1:** What is the size of a `long int` data type in C on a 64-bit system? (1",
+    "options": [
+      "(a) 8 bytes",
+      "(b) 4 bytes",
+      "(c) 2 bytes",
+      "(d) 1 byte"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(a) 8 bytes",
+    "marks": 1,
+    "topic": "C porgramming "
+  },
+  {
+    "question": "**Question 2:** Which of the following is NOT a valid C keyword? (1",
+    "options": [
+      "(a) `int`",
+      "(b) `float`",
+      "(c) `void`",
+      "(d) `string`"
+    ],
+    "correct_answer": "**Correct Answer:** d",
+    "user_answer": "(a) `int`",
+    "marks": 1,
+    "topic": "C porgramming "
+  },
+  {
+    "question": "**Question 3:**  What is the output of the following code snippet? `printf(\"%d\", 10/3);` (1",
+    "options": [
+      "(a) 3",
+      "(b) 3.333...",
+      "(c) 0",
+      "(d) Compilation error"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(c) 0",
+    "marks": 1,
+    "topic": "C porgramming "
+  },
+  {
+    "question": "**Question 4:** Which header file is necessary for using standard input/output functions like `printf` and `scanf`? (1",
+    "options": [
+      "(a) `stdio.h`",
+      "(b) `stdlib.h`",
+      "(c) `string.h`",
+      "(d) `math.h`"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(a) `stdio.h`",
+    "marks": 1,
+    "topic": "C porgramming "
+  },
+  {
+    "question": "**Question 5:**  What will happen if you try to access an array element outside its bounds? (1",
+    "options": [
+      "(a) A warning message is displayed.",
+      "(b) The program terminates gracefully.",
+      "(c) Undefined behavior (may crash or produce unexpected results).",
+      "(d) The program ignores the invalid access."
+    ],
+    "correct_answer": "**Correct Answer:** c",
+    "user_answer": "(b) The program terminates gracefully.",
+    "marks": 1,
+    "topic": "C porgramming "
+  },
+  {
+    "question": "**Question 6:** What is the purpose of the `sizeof` operator? (1",
+    "options": [
+      "(a) To determine the size of a data type or variable in bytes.",
+      "(b) To allocate memory dynamically.",
+      "(c) To perform arithmetic operations.",
+      "(d) To compare two variables."
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(c) To perform arithmetic operations.",
+    "marks": 1,
+    "topic": "C porgramming "
+  },
+  {
+    "question": "**Question 7:** Which loop is best suited for iterating a known number of times? (1",
+    "options": [
+      "(a) `for` loop",
+      "(b) `while` loop",
+      "(c) `do-while` loop",
+      "(d) `goto` statement"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(c) `do-while` loop",
+    "marks": 1,
+    "topic": "C porgramming "
+  },
+  {
+    "question": "**Question 8:** What does the `%c` format specifier do in `printf`? (1",
+    "options": [
+      "(a) Prints a single character.",
+      "(b) Prints an integer.",
+      "(c) Prints a floating-point number.",
+      "(d) Prints a string."
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(a) Prints a single character.",
+    "marks": 1,
+    "topic": "C porgramming "
+  },
+  {
+    "question": "**Question 9:** How do you declare a pointer to an integer in C? (1",
+    "options": [
+      "(a) `int *ptr;`",
+      "(b) `int ptr*;`",
+      "(c) `*int ptr;`",
+      "(d) `int &ptr;`"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(a) `int *ptr;`",
+    "marks": 1,
+    "topic": "C porgramming "
+  },
+  {
+    "question": "**Question 10:** Which function is used to convert a string to an integer in C? (1",
+    "options": [
+      "(a) `atoi()`",
+      "(b) `atoi()`",
+      "(c) `strtol()`",
+      "(d) `sprintf()`"
+    ],
+    "correct_answer": "**Correct Answer:** b",
+    "user_answer": "(b) `atoi()`",
+    "marks": 1,
+    "topic": "C porgramming "
+  }
+]

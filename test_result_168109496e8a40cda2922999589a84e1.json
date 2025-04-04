@@ -1,0 +1,62 @@
+[
+  {
+    "question": "**Question 1:** What will be the output of the following code? `print(type(5 + 2.0))`  (2",
+    "user_answer": "(a) `<class 'float'>`",
+    "correct_answer": "**Correct Answer:** a",
+    "topic": "python"
+  },
+  {
+    "question": "**Question 2:** Which keyword is used to handle exceptions in Python? (1",
+    "user_answer": "(a) `try...except`",
+    "correct_answer": "**Correct Answer:** a",
+    "topic": "python"
+  },
+  {
+    "question": "**Question 3:**  What is the output of `list(range(1, 5))`? (2",
+    "user_answer": "(b) `[1, 2, 3, 4, 5]`",
+    "correct_answer": "**Correct Answer:** a",
+    "topic": "python"
+  },
+  {
+    "question": "**Question 4:** Which data structure is best suited for implementing a LIFO (Last-In, First-Out) structure? (1",
+    "user_answer": "(b) Queue (using a list)",
+    "correct_answer": "**Correct Answer:** a",
+    "topic": "python"
+  },
+  {
+    "question": "**Question 5:** What will be the output of  `my_string = \"hello\"; print(my_string[1:4])`? (2",
+    "user_answer": "(d) `llo`",
+    "correct_answer": "**Correct Answer:** a",
+    "topic": "python"
+  },
+  {
+    "question": "**Question 6:** Which function is used to open a file in Python? (1",
+    "user_answer": "(a) `open()`",
+    "correct_answer": "**Correct Answer:** a",
+    "topic": "python"
+  },
+  {
+    "question": "**Question 7:** What does the `self` parameter represent in a Python class method? (2",
+    "user_answer": "(c) A static variable",
+    "correct_answer": "**Correct Answer:** b",
+    "topic": "python"
+  },
+  {
+    "question": "**Question 8:** What is the purpose of the `__init__` method in a Python class? (1",
+    "user_answer": "(b) Destructor, cleans up object resources",
+    "correct_answer": "**Correct Answer:** a",
+    "topic": "python"
+  },
+  {
+    "question": "**Question 9:**  Which module provides functions for working with regular expressions in Python? (1",
+    "user_answer": "(a) `re`",
+    "correct_answer": "**Correct Answer:** a",
+    "topic": "python"
+  },
+  {
+    "question": "**Question 10:** What does the `lambda` keyword create in Python? (2",
+    "user_answer": "(a) An anonymous function",
+    "correct_answer": "**Correct Answer:** a",
+    "topic": "python"
+  }
+]

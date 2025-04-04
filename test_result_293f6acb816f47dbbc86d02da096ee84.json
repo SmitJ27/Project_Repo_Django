@@ -1,0 +1,122 @@
+[
+  {
+    "question": "**Question 1:** What will be the output of the following code?  `print(type(5))` (1",
+    "options": [
+      "(a) <class 'int'>",
+      "(b) <class 'float'>",
+      "(c) <class 'str'>",
+      "(d) <class 'bool'>"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(a) <class 'int'>",
+    "marks": 1
+  },
+  {
+    "question": "**Question 2:** Which keyword is used to define a function in Python? (1",
+    "options": [
+      "(a) def",
+      "(b) function",
+      "(c) proc",
+      "(d) sub"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(a) def",
+    "marks": 1
+  },
+  {
+    "question": "**Question 3:** What is the result of the expression `10 // 3` in Python? (1",
+    "options": [
+      "(a) 3",
+      "(b) 3.333...",
+      "(c) 0",
+      "(d) 1"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(b) 3.333...",
+    "marks": 1
+  },
+  {
+    "question": "**Question 4:**  What data structure is used to store a collection of key-value pairs? (1",
+    "options": [
+      "(a) Dictionary",
+      "(b) List",
+      "(c) Tuple",
+      "(d) Set"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(b) List",
+    "marks": 1
+  },
+  {
+    "question": "**Question 5:** Which loop iterates through a sequence (like a list or tuple) by its index? (1",
+    "options": [
+      "(a) while loop",
+      "(b) for loop",
+      "(c) do-while loop",
+      "(d) repeat-until loop"
+    ],
+    "correct_answer": "**Correct Answer:** b",
+    "user_answer": "(a) while loop",
+    "marks": 1
+  },
+  {
+    "question": "**Question 6:** What will be the output of `len(\"Hello, World!\")`? (1",
+    "options": [
+      "(a) 13",
+      "(b) 12",
+      "(c) 11",
+      "(d) 14"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(a) 13",
+    "marks": 1
+  },
+  {
+    "question": "**Question 7:** What does the `append()` method do for a list? (1",
+    "options": [
+      "(a) Adds an element to the end of the list.",
+      "(b) Removes an element from the end of the list.",
+      "(c) Inserts an element at a specific index.",
+      "(d) Removes an element at a specific index."
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(b) Removes an element from the end of the list.",
+    "marks": 1
+  },
+  {
+    "question": "**Question 8:**  What is the purpose of a `try-except` block in Python? (1",
+    "options": [
+      "(a) To define a function.",
+      "(b) To create a loop.",
+      "(c) To handle exceptions and prevent program crashes.",
+      "(d) To define a class."
+    ],
+    "correct_answer": "**Correct Answer:** c",
+    "user_answer": "(c) To handle exceptions and prevent program crashes.",
+    "marks": 1
+  },
+  {
+    "question": "**Question 9:**  Which built-in function converts a string to an integer? (1",
+    "options": [
+      "(a) `int()`",
+      "(b) `str()`",
+      "(c) `float()`",
+      "(d) `bool()`"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(b) `str()`",
+    "marks": 1
+  },
+  {
+    "question": "**Question 10:** What is the output of `print(list(range(2, 7)))`? (1",
+    "options": [
+      "(a) `[2, 3, 4, 5, 6]`",
+      "(b) `[2, 4, 6]`",
+      "(c) `[1, 2, 3, 4, 5, 6]`",
+      "(d) `[2, 7]`"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(b) `[2, 4, 6]`",
+    "marks": 1
+  }
+]

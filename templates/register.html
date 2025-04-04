@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Personalized Learning App</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #111;
+        }
+
+        .square {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .square i {
+            position: absolute;
+            inset: 0;
+            border: 2px solid #fff;
+            transition: 0.5s;
+        }
+
+        .square i:nth-child(1) {
+            border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+            animation: animate 6s linear infinite;
+        }
+
+        .square i:nth-child(2) {
+            border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+            animation: animate 4s linear infinite;
+        }
+
+        .square i:nth-child(3) {
+            border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+            animation: animate2 10s linear infinite;
+        }
+
+        .square:hover i {
+            border: 6px solid var(--clr);
+            filter: drop-shadow(0 0 20px var(--clr));
+        }
+
+        /* Register Form Styles */
+        .signup {
+            position: absolute;
+            width: 400px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .signup h2 {
+            font-size: 2.5em;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .signup .inputBx {
+            width: 100%;
+            position: relative;
+        }
+
+        .signup .inputBx input {
+            width: 100%;
+            padding: 14px 20px;
+            background: transparent;
+            border: 2px solid #fff;
+            border-radius: 40px;
+            font-size: 1.2em;
+            color: #fff;
+            box-shadow: none;
+            outline: none;
+            margin-bottom: 20px; /* Increased margin for spacing between inputs */
+        }
+
+        .signup .inputBx input[type="submit"] {
+            width: 100%;
+            background: #0078ff;
+            background: linear-gradient(45deg, #ff357a, #fff172);
+            border: none;
+            cursor: pointer;
+            padding: 14px;
+            font-size: 1.2em;
+            border-radius: 40px;
+            color: #fff;
+        }
+
+        .signup .inputBx input::placeholder {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .signup .links {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .signup .links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        /* Animations */
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes animate2 {
+            0% {
+                transform: rotate(360deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Full Background Animation -->
+    <div class="square">
+        <i></i>
+        <i></i>
+        <i></i>
+    </div>
+
+    <!-- Register Form Section -->
+    <div class="signup">
+        <h2>Create Account</h2>
+        <form action="{% url 'register' %}" method="POST">
+            {% csrf_token %}
+            
+            {% if messages %}
+                <ul style="color: red;">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <div class="inputBx">
+                <input type="text" name="username" placeholder="Enter your username" required />
+                {% if form.username.errors %}
+                    <div style="color: red;">{{ form.username.errors }}</div>
+                {% endif %}
+            </div>
+
+            <div class="inputBx">
+                <input type="email" name="email" placeholder="Enter your email" required />
+                {% if form.email.errors %}
+                    <div style="color: red;">{{ form.email.errors }}</div>
+                {% endif %}
+            </div>
+
+            <div class="inputBx">
+                <input type="password" name="password" placeholder="Enter your password" required />
+                {% if form.password.errors %}
+                    <div style="color: red;">{{ form.password.errors }}</div>
+                {% endif %}
+            </div>
+
+            <div class="inputBx">
+                <input type="password" name="confirm_password" placeholder="Confirm your password" required />
+                {% if form.confirm_password.errors %}
+                    <div style="color: red;">{{ form.confirm_password.errors }}</div>
+                {% endif %}
+            </div>
+
+            <div class="inputBx">
+                <input type="submit" value="Register" />
+            </div>
+
+            <div class="links">
+                <a href="{% url 'login_view' %}">Already have an account? Login</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- JS code for form behavior (if necessary) -->
+    <script>
+        // Add JavaScript functionality if needed
+    </script>
+</body>
+
+</html>

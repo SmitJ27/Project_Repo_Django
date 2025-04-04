@@ -1,0 +1,132 @@
+[
+  {
+    "question": "What is the output of the following code?  `print(type(5.0))` (1",
+    "options": [
+      "(a) `<class 'float'>`",
+      "(b) `<class 'int'>`",
+      "(c) `<class 'str'>`",
+      "(d) `<class 'bool'>`"
+    ],
+    "correct_answer": "a",
+    "user_answer": "(a) `<class 'float'>`",
+    "marks": 1,
+    "topic": "python"
+  },
+  {
+    "question": "Which keyword is used to handle exceptions in Python? (1",
+    "options": [
+      "(a) `try...except`",
+      "(b) `if...else`",
+      "(c) `for...in`",
+      "(d) `while`"
+    ],
+    "correct_answer": "a",
+    "user_answer": "(a) `try...except`",
+    "marks": 1,
+    "topic": "python"
+  },
+  {
+    "question": "What will be the value of `x` after executing this code: `x = 10; x += 5`? (1",
+    "options": [
+      "(a) 15",
+      "(b) 5",
+      "(c) 10",
+      "(d) 25"
+    ],
+    "correct_answer": "a",
+    "user_answer": "(a) 15",
+    "marks": 1,
+    "topic": "python"
+  },
+  {
+    "question": "Which data structure is best suited for representing a collection of unique elements? (1",
+    "options": [
+      "(a) `set`",
+      "(b) `list`",
+      "(c) `tuple`",
+      "(d) `dictionary`"
+    ],
+    "correct_answer": "a",
+    "user_answer": "(a) `set`",
+    "marks": 1,
+    "topic": "python"
+  },
+  {
+    "question": "What does the `len()` function return when applied to a string? (1",
+    "options": [
+      "(a) The number of characters in the string.",
+      "(b) The first character of the string.",
+      "(c) The last character of the string.",
+      "(d) The string's data type."
+    ],
+    "correct_answer": "a",
+    "user_answer": "(a) The number of characters in the string.",
+    "marks": 1,
+    "topic": "python"
+  },
+  {
+    "question": "Which loop is best suited for iterating a specific number of times? (1",
+    "options": [
+      "(a) `for` loop",
+      "(b) `while` loop",
+      "(c) `do...while` loop (Python doesn't have this)",
+      "(d) `repeat...until` loop (Python doesn't have this)"
+    ],
+    "correct_answer": "a",
+    "user_answer": "(a) `for` loop",
+    "marks": 1,
+    "topic": "python"
+  },
+  {
+    "question": "What is the purpose of the `__init__` method in a class? (1",
+    "options": [
+      "(a) It's the constructor, used to initialize object attributes.",
+      "(b) It's a destructor, used to clean up resources.",
+      "(c) It's a method to print the object's state.",
+      "(d) It's a static method."
+    ],
+    "correct_answer": "a",
+    "user_answer": "(b) It's a destructor, used to clean up resources.",
+    "marks": 1,
+    "topic": "python"
+  },
+  {
+    "question": "What does the `append()` method do for a list? (1",
+    "options": [
+      "(a) Adds an element to the end of the list.",
+      "(b) Removes an element from the end of the list.",
+      "(c) Inserts an element at a specific index.",
+      "(d) Sorts the list."
+    ],
+    "correct_answer": "a",
+    "user_answer": "(a) Adds an element to the end of the list.",
+    "marks": 1,
+    "topic": "python"
+  },
+  {
+    "question": "What will this code print: `my_list = [1,2,3]; print(my_list[1])` (1",
+    "options": [
+      "(a) 2",
+      "(b) 1",
+      "(c) 3",
+      "(d) Error"
+    ],
+    "correct_answer": "a",
+    "user_answer": "(a) 2",
+    "marks": 1,
+    "topic": "python"
+  },
+  {
+    "question": "What is the output of `print(10 // 3)`? (1",
+    "options": [
+      "(a) 3",
+      "(b) 3.333...",
+      "(c) 1",
+      "(d) 0"
+    ],
+    "correct_answer": "a",
+    "user_answer": "(a) 3",
+    "marks": 1,
+    "topic": "python"
+  }
+]

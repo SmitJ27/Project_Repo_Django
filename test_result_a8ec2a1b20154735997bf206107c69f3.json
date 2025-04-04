@@ -1,0 +1,132 @@
+[
+  {
+    "question": "**Question 1:** What is the size of a `long int` data type in C, assuming a 64-bit system?  <2",
+    "options": [
+      "(a) 8 bytes",
+      "(b) 4 bytes",
+      "(c) 2 bytes",
+      "(d) 1 byte"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(b) 4 bytes",
+    "marks": 1,
+    "topic": "C porgramming "
+  },
+  {
+    "question": "**Question 2:** Which keyword is used to prevent a variable from being modified after its initialization? <2",
+    "options": [
+      "(a) `static`",
+      "(b) `const`",
+      "(c) `volatile`",
+      "(d) `register`"
+    ],
+    "correct_answer": "**Correct Answer:** b",
+    "user_answer": "(a) `static`",
+    "marks": 1,
+    "topic": "C porgramming "
+  },
+  {
+    "question": "**Question 3:**  What will be the output of the following code snippet?  `printf(\"%d\", 10 / 3);` <2",
+    "options": [
+      "(a) 3",
+      "(b) 3.333...",
+      "(c) 0",
+      "(d) Compilation error"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(a) 3",
+    "marks": 1,
+    "topic": "C porgramming "
+  },
+  {
+    "question": "**Question 4:** Which header file is necessary for using standard input/output functions like `printf` and `scanf`? <1",
+    "options": [
+      "(a) `stdio.h`",
+      "(b) `string.h`",
+      "(c) `stdlib.h`",
+      "(d) `math.h`"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(a) `stdio.h`",
+    "marks": 1,
+    "topic": "C porgramming "
+  },
+  {
+    "question": "**Question 5:** What does the `sizeof` operator return? <2",
+    "options": [
+      "(a) The size of a variable or data type in bytes",
+      "(b) The address of a variable",
+      "(c) The value of a variable",
+      "(d) The number of elements in an array"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(a) The size of a variable or data type in bytes",
+    "marks": 1,
+    "topic": "C porgramming "
+  },
+  {
+    "question": "**Question 6:**  Which loop is best suited for iterating a known number of times? <1",
+    "options": [
+      "(a) `while` loop",
+      "(b) `for` loop",
+      "(c) `do-while` loop",
+      "(d) All are equally suitable"
+    ],
+    "correct_answer": "**Correct Answer:** b",
+    "user_answer": "(b) `for` loop",
+    "marks": 1,
+    "topic": "C porgramming "
+  },
+  {
+    "question": "**Question 7:** What is the purpose of the `break` statement in a switch case? <2",
+    "options": [
+      "(a) To exit the switch statement immediately",
+      "(b) To continue to the next case",
+      "(c) To pause the execution",
+      "(d) To declare a new variable"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(c) To pause the execution",
+    "marks": 1,
+    "topic": "C porgramming "
+  },
+  {
+    "question": "**Question 8:** Which function is used to dynamically allocate memory in C? <1",
+    "options": [
+      "(a) `malloc`",
+      "(b) `calloc`",
+      "(c) `free`",
+      "(d) Both a and b"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(a) `malloc`",
+    "marks": 1,
+    "topic": "C porgramming "
+  },
+  {
+    "question": "**Question 9:** What is the purpose of a pointer variable? <2",
+    "options": [
+      "(a) To store the memory address of another variable",
+      "(b) To store a large integer value",
+      "(c) To store a character string",
+      "(d) To perform arithmetic operations"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(a) To store the memory address of another variable",
+    "marks": 1,
+    "topic": "C porgramming "
+  },
+  {
+    "question": "**Question 10:**  How do you declare a function that takes no arguments and returns an integer value? <2",
+    "options": [
+      "(a) `int myFunction(void)`",
+      "(b) `void myFunction(int)`",
+      "(c) `int myFunction()`",
+      "(d) `void myFunction()`"
+    ],
+    "correct_answer": "**Correct Answer:** a",
+    "user_answer": "(a) `int myFunction(void)`",
+    "marks": 1,
+    "topic": "C porgramming "
+  }
+]

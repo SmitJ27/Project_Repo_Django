@@ -22,7 +22,7 @@ from .forms import RegistrationForm
 # Configure GenAI API
 load_dotenv()
 api_key = os.getenv("API_KEY")
-genai.configure(api_key="api_key") 
+genai.configure(api_key=api_key) 
 model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
 

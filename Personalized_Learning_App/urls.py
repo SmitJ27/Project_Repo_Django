@@ -18,6 +18,14 @@ urlpatterns = [
     path('submit_test/', views.submit_test, name='submit_test'),
     path('logout/', views.user_logout, name='logout'), 
     path('user_dashboard/', views.user_dashboard, name="user_dashboard"),
+    path('current_course/', views.current_course, name="current_course"),
+    path('python_course/', views.python_course, name="python_course"),
+    path('java_course/', views.java_course, name="java_course"),
+    path('cpp_course/', views.cpp_course, name="cpp_course"),
+    path('dbms_course/', views.dbms_course, name="dbms_course"),
+    path('os_course/', views.os_course, name="os_course"),
+    path('networking_course/', views.networking_course, name="networking_course"),
+    path('devops_course/', views.devops_course, name="devops_course"),
     path("generate_pdf/", views.generate_pdf, name="generate_pdf"),
 ]
 

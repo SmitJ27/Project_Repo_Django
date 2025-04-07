@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Networking Course - LearnSmart</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d0f2b;
+      color: white;
+    }
+    .container {
+      padding: 2rem;
+    }
+    h1, h2 {
+      color: #00ffd5;
+    }
+    .description {
+      color: #ccc;
+      margin-bottom: 1.5rem;
+    }
+    .module {
+      background-color: #1c1d32;
+      padding: 1.2rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: 0.3s ease;
+    }
+    .module:hover {
+      box-shadow: 0 0 12px #00ffd5, 0 0 22px #00ffd5;
+      transform: scale(1.02);
+    }
+    .progress-bar {
+      height: 10px;
+      background-color: #333;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background-color: #00ffd5;
+      transition: width 0.5s;
+    }
+    .resources a {
+      color: #00ffd5;
+      text-decoration: none;
+      margin-right: 1rem;
+    }
+    .resources a:hover {
+      text-decoration: underline;
+    }
+    .back-btn {
+      margin-top: 2rem;
+      padding: 0.7rem 1.5rem;
+      background-color: #01241d;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .back-btn:hover {
+      box-shadow: 0 0 10px #00ffd5;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Networking Course</h1>
+    <p class="description">
+      Master the fundamentals of computer networks — covering OSI model, protocols, IP addressing, and routing techniques.
+    </p>
+
+    <h2>Modules</h2>
+
+    <div class="module">
+      <strong>1. Introduction to Networking</strong>
+      <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+    </div>
+
+    <div class="module">
+      <strong>2. OSI & TCP/IP Models</strong>
+      <div class="progress-bar"><div class="progress-fill" style="width: 70%;"></div></div>
+    </div>
+
+    <div class="module">
+      <strong>3. IP Addressing & Subnetting</strong>
+      <div class="progress-bar"><div class="progress-fill" style="width: 50%;"></div></div>
+    </div>
+
+    <div class="module">
+      <strong>4. Protocols (HTTP, FTP, etc.)</strong>
+      <div class="progress-bar"><div class="progress-fill" style="width: 30%;"></div></div>
+    </div>
+
+    <div class="module">
+      <strong>5. Routing & Switching Basics</strong>
+      <div class="progress-bar"><div class="progress-fill" style="width: 20%;"></div></div>
+    </div>
+
+    <h2>Resources</h2>
+    <div class="resources">
+      <a href="https://www.geeksforgeeks.org/computer-network-tutorials/" target="_blank">GFG Networking</a>
+      <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/training/ccna/what-is-networking.html" target="_blank">Cisco Basics</a>
+      <a href="https://youtu.be/qz04N6jLJbY" target="_blank">YouTube Course</a>
+    </div>
+
+    <button class="back-btn" onclick="window.location.href='../index.html' ">⬅ Back to Dashboard</button>
+  </div>
+</body>
+</html>

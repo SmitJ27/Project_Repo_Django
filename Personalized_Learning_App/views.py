@@ -39,6 +39,37 @@ def contact(request):
 def user_dashboard(request):
     return render(request, 'user_dashboard.html')
 
+@login_required
+def current_course(request):
+    return render(request, 'current_course.html')
+
+@login_required
+def python_course(request):
+    return render(request, 'python_course.html')
+
+@login_required
+def java_course(request):
+    return render(request, 'java_course.html')
+
+@login_required
+def cpp_course(request):
+    return render(request, 'cpp_course.html')
+
+@login_required
+def os_course(request):
+    return render(request, 'os_course.html')
+
+@login_required
+def dbms_course(request):
+    return render(request, 'dbms_course.html')
+
+@login_required
+def networking_course(request):
+    return render(request, 'networking_course.html')
+
+@login_required
+def devops_course(request):
+    return render(request, 'devops_course.html')
 
 @login_required
 def admin_dashboard(request):

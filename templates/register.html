@@ -162,41 +162,34 @@
         <h2>Create Account</h2>
         <form action="{% url 'register' %}" method="POST">
             {% csrf_token %}
-            
+
+            <!-- Display only the first error message -->
             {% if messages %}
-                <ul style="color: red;">
-                    {% for message in messages %}
-                        <li>{{ message }}</li>
-                    {% endfor %}
+                <ul style="color: red; list-style-type: none; margin-bottom: 10px;">
+                    <li>{{ messages.0 }}</li>
+                </ul>
+            {% endif %}
+
+            {% if form.non_field_errors %}
+                <ul style="color: red; list-style-type: none; margin-bottom: 10px;">
+                    <li>{{ form.non_field_errors.0 }}</li>
                 </ul>
             {% endif %}
 
             <div class="inputBx">
                 <input type="text" name="username" placeholder="Enter your username" required />
-                {% if form.username.errors %}
-                    <div style="color: red;">{{ form.username.errors }}</div>
-                {% endif %}
             </div>
 
             <div class="inputBx">
                 <input type="email" name="email" placeholder="Enter your email" required />
-                {% if form.email.errors %}
-                    <div style="color: red;">{{ form.email.errors }}</div>
-                {% endif %}
             </div>
 
             <div class="inputBx">
                 <input type="password" name="password" placeholder="Enter your password" required />
-                {% if form.password.errors %}
-                    <div style="color: red;">{{ form.password.errors }}</div>
-                {% endif %}
             </div>
 
             <div class="inputBx">
                 <input type="password" name="confirm_password" placeholder="Confirm your password" required />
-                {% if form.confirm_password.errors %}
-                    <div style="color: red;">{{ form.confirm_password.errors }}</div>
-                {% endif %}
             </div>
 
             <div class="inputBx">
@@ -214,5 +207,6 @@
         // Add JavaScript functionality if needed
     </script>
 </body>
+
 
 </html>

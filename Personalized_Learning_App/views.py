@@ -4,7 +4,7 @@ import uuid
 from dotenv import load_dotenv
 import google.generativeai as genai
 from xhtml2pdf import pisa
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from django.http import HttpResponse, JsonResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -126,29 +126,29 @@ def admin_dash(request):
     return render(request, 'admin_dash.html', context)
 
 
-@login_required
-def admin_dashboard(request):
-    if not request.user.is_staff:
-        return redirect('login_view')
+# @login_required
+# def admin_dashboard(request):
+#     if not request.user.is_staff:
+#         return redirect('login_view')
 
-    today = now().date()
-    todays_active_users = User.objects.filter(last_login__date=today).count()
-    total_tests_created = Test.objects.count()
-    total_tests_submitted = TestSubmission.objects.count()
-    new_feedback_count = ContactMessage.objects.filter(is_read=False).count()
+#     today = now().date()
+#     todays_active_users = User.objects.filter(last_login__date=today).count()
+#     total_tests_created = Test.objects.count()
+#     total_tests_submitted = TestSubmission.objects.count()
+#     new_feedback_count = ContactMessage.objects.filter(is_read=False).count()
 
-    context = {
-        'total_users': User.objects.count(),
-        'active_sessions': 150,  
-        'total_courses': 200,
-        'pending_requests': 20,
-        'todays_active_users': todays_active_users,
-        'total_tests_created': total_tests_created,
-        'total_tests_submitted': total_tests_submitted,
-        'new_feedback_count': new_feedback_count, 
-    }
+#     context = {
+#         'total_users': User.objects.count(),
+#         'active_sessions': 150,  
+#         'total_courses': 200,
+#         'pending_requests': 20,
+#         'todays_active_users': todays_active_users,
+#         'total_tests_created': total_tests_created,
+#         'total_tests_submitted': total_tests_submitted,
+#         'new_feedback_count': new_feedback_count, 
+#     }
 
-    return render(request, 'admin_dashboard.html', context)
+#     return render(request, 'admin_dashboard.html', context)
 
 
 #Contact us form
@@ -171,45 +171,103 @@ def contact(request):
 def view_feedbacks(request):
     if not request.user.is_staff:
         return redirect('login_view')
+
+    deleted = False
+
+    if request.method == 'POST':
+        delete_id = request.POST.get('delete_id')
+        if delete_id:
+            ContactMessage.objects.filter(id=delete_id).delete()
+            deleted = True 
+
     ContactMessage.objects.filter(is_read=False).update(is_read=True)
     messages = ContactMessage.objects.all().order_by('-timestamp')
-    return render(request, 'feedbacks.html', {'messages': messages})
+
+    return render(request, 'feedbacks.html', {
+        'messages': messages,
+        'deleted': deleted
+    })
+
+
+# def register(request):
+#     if request.method == 'POST':
+#         form = RegistrationForm(request.POST)
+        
+#         if form.is_valid():
+#             # Get the form data
+#             username = form.cleaned_data['username']
+#             email = form.cleaned_data['email']
+#             password = form.cleaned_data['password']
+            
+#             # Create a new user in the database
+#             try:
+#                 user = User.objects.create_user(username=username, email=email, password=password)
+#                 user.save()  # This saves the user into the auth.User table
+                
+#                 # Show success message and redirect to login page
+#                 messages.success(request, "Account created successfully! Please log in.")
+#                 return redirect('login')  # Adjust with your actual login view URL name
+#             except Exception as e:
+#                 messages.error(request, f"Error saving your data: {e}")
+#                 return redirect('register')  # Stay on the register page if there was an error
+#         else:
+#             # If form is not valid, re-render the page with error messages
+#             messages.error(request, "There was an error with your form. Please try again.")
+#             return render(request, 'register.html', {'form': form})
+#     else:
+#         # GET request, just show the form
+#         form = RegistrationForm()
+    
+#     return render(request, 'register.html', {'form': form})
+
+
+# def login_view(request):
+#     if request.method == "POST":
+#         user = authenticate(
+#             request,
+#             username=request.POST['username'],
+#             password=request.POST['password']
+#         )
+#         if user:
+#             login(request, user)
+#             return redirect('user_dashboard')
+#         else:
+#             messages.error(request, "Invalid username or password.")
+    
+#     return render(request, 'login.html')
 
 
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
-        
         if form.is_valid():
-            # Get the form data
             username = form.cleaned_data['username']
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
-            
-            # Create a new user in the database
+
             try:
-                user = User.objects.create_user(username=username, email=email, password=password)
-                user.save()  # This saves the user into the auth.User table
-                
-                # Show success message and redirect to login page
+                User.objects.create_user(username=username, email=email, password=password)
                 messages.success(request, "Account created successfully! Please log in.")
-                return redirect('login')  # Adjust with your actual login view URL name
+                return redirect('login_view')  # Make sure 'login_view' matches your actual URL name
             except Exception as e:
-                messages.error(request, f"Error saving your data: {e}")
-                return redirect('register')  # Stay on the register page if there was an error
+                messages.error(request, "Something went wrong while creating your account.")
+                return redirect('register')
         else:
-            # If form is not valid, re-render the page with error messages
-            messages.error(request, "There was an error with your form. Please try again.")
-            return render(request, 'register.html', {'form': form})
+            # Only show the first non-field error (like "Passwords don't match", "Email exists", etc.)
+            errors = form.non_field_errors()
+            if errors:
+                messages.error(request, errors[0])
+            else:
+                messages.error(request, "Please check your input and try again.")
+            return redirect('register')
     else:
-        # GET request, just show the form
         form = RegistrationForm()
-    
     return render(request, 'register.html', {'form': form})
 
-
 def login_view(request):
+    attempted = False
     if request.method == "POST":
+        attempted = True
         user = authenticate(
             request,
             username=request.POST['username'],
@@ -221,7 +279,7 @@ def login_view(request):
         else:
             messages.error(request, "Invalid username or password.")
     
-    return render(request, 'login.html')
+    return render(request, 'login.html', {'attempted': attempted})
 
 def admin_login_view(request):
     if request.method == "POST":

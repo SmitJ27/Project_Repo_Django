@@ -86,12 +86,11 @@
             color: #fff;
             box-shadow: none;
             outline: none;
-            margin-bottom: 15px; /* Added margin for spacing */
+            margin-bottom: 15px;
         }
 
         .login .inputBx input[type="submit"] {
             width: 100%;
-            background: #0078ff;
             background: linear-gradient(45deg, #ff357a, #fff172);
             border: none;
             cursor: pointer;
@@ -113,6 +112,24 @@
         .login .links a {
             color: #fff;
             text-decoration: none;
+        }
+
+        .message {
+            text-align: center;
+            color: #ff357a;
+            font-weight: bold;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Animations */
@@ -139,16 +156,25 @@
 </head>
 
 <body>
-    <!-- Full Background Animation -->
+    <!-- Background Animation -->
     <div class="square">
         <i></i>
         <i></i>
         <i></i>
     </div>
 
-    <!-- Login Form Section -->
+    <!-- Login Form -->
     <div class="login">
         <h2>Login</h2>
+
+        {% if attempted and messages %}
+            <div class="message">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        {% endif %}
+
         <form action="{% url 'login_view' %}" method="POST">
             {% csrf_token %}
             <div class="inputBx">
@@ -166,11 +192,7 @@
             </div>
         </form>
     </div>
-
-    <!-- JS code for form behavior (if necessary) -->
-    <script>
-        // Add JavaScript functionality if needed
-    </script>
+    
 </body>
 
 </html>

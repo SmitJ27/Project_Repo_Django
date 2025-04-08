@@ -71,11 +71,16 @@ def networking_course(request):
 def devops_course(request):
     return render(request, 'devops_course.html')
 
-@login_required
+
 def resourse_recommendations(request):
     return render(request, 'resourse_recommendations.html')
 
-@login_required
+def progress(request):
+    return render(request, 'progress.html')
+
+def todo_list(request):
+    return render(request, 'todo.html')
+
 def qr_gen(request):
     return render(request, 'qr_gen.html')
 

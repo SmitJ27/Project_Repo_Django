@@ -5,6 +5,9 @@ from . import  views
 urlpatterns = [
     
     path('', views.index, name="index"),
+    path('resourse_recommendations/', views.resourse_recommendations, name="resourse_recommendations"),
+    path('progress/', views.progress, name="progress"),
+    path('todo_list/', views.todo_list, name="todo_list"),
     path('register/', views.register, name="register"),
     path('contact/', views.contact, name="contact"),
     path('view_feedbacks/', views.view_feedbacks, name='feedbacks'),
@@ -30,7 +33,6 @@ urlpatterns = [
     path('os_course/', views.os_course, name="os_course"),
     path('networking_course/', views.networking_course, name="networking_course"),
     path('devops_course/', views.devops_course, name="devops_course"),
-    path('resourse_recommendations/', views.resourse_recommendations, name="resourse_recommendations"),
     path('qr_gen/', views.qr_gen, name="qr_gen"),
     path('your_achievements/', views.your_achievements, name="your_achievements"),
     path('view_subjects/', views.view_subjects, name="view_subjects"),

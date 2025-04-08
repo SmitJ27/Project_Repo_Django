@@ -71,6 +71,11 @@ def networking_course(request):
 def devops_course(request):
     return render(request, 'devops_course.html')
 
+def ai_analysis(request):
+    return render(request, 'ai_analysis.html')
+
+def quiz(request):
+    return render(request, 'quiz.html')
 
 def resourse_recommendations(request):
     return render(request, 'resourse_recommendations.html')

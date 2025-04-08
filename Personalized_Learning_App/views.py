@@ -72,6 +72,22 @@ def devops_course(request):
     return render(request, 'devops_course.html')
 
 @login_required
+def resourse_recommendations(request):
+    return render(request, 'resourse_recommendations.html')
+
+@login_required
+def qr_gen(request):
+    return render(request, 'qr_gen.html')
+
+@login_required
+def your_achievements(request):
+    return render(request, 'your_achievements.html')
+
+@login_required
+def view_subjects(request):
+    return render(request, 'view_subjects.html')
+
+@login_required
 def admin_dashboard(request):
     if not request.user.is_staff:
         return redirect('login_view')

@@ -26,6 +26,10 @@ urlpatterns = [
     path('os_course/', views.os_course, name="os_course"),
     path('networking_course/', views.networking_course, name="networking_course"),
     path('devops_course/', views.devops_course, name="devops_course"),
+    path('resourse_recommendations/', views.resourse_recommendations, name="resourse_recommendations"),
+    path('qr_gen/', views.qr_gen, name="qr_gen"),
+    path('your_achievements/', views.your_achievements, name="your_achievements"),
+    path('view_subjects/', views.view_subjects, name="view_subjects"),
     path("generate_pdf/", views.generate_pdf, name="generate_pdf"),
 ]
 

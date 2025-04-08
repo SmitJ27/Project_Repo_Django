@@ -271,28 +271,26 @@
         <p>Progress: 70%</p>
       </a>
 
-      <div class="card">
+      <a href="{% url 'resourse_recommendations' %}" class="card" style="text-decoration: none; color: inherit;">
         <h3>Recommended Courses</h3>
         <p>Python for Data Analysis</p>
         <p>AI & Machine Learning Basics</p>
         <p>Advanced Data Visualization</p>
-      </div>
+      </a>
 
-      <div class="card">
+      <a href="{% url 'your_achievements' %}" class="card" style="text-decoration: none; color: inherit;">
         <h3>Your Achievements</h3>
         <p>Completed 5 courses</p>
         <p>Earned 250 learning points</p>
-      </div>
+      </a>
     </div>
 
     <!-- New Section for Subjects & Tests -->
     <div class="card-container">
-      <div class="card">
+      <a href="{% url 'view_subjects' %}" class="card" style="text-decoration: none; color: inherit;">
         <h3>View Subjects</h3>
         <p>Explore subjects you're currently enrolled in or new ones to add to your learning journey.</p>
-        {% comment %} <a href="#" style="display:block; color:#00ffcc; margin-top:10px; text-decoration:none;">View
-          Subjects</a> {% endcomment %}
-      </div>
+        </a>
 
       <div class="card">
         <h3>Take a Test</h3>

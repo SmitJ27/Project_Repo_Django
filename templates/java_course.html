@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Java Course - LearnSmart</title>
   <style>
     body {
@@ -11,28 +12,35 @@
       background-color: #0d0f2b;
       color: white;
     }
+
     .container {
       padding: 2rem;
     }
-    h1, h2 {
+
+    h1,
+    h2 {
       color: #00ffd5;
     }
+
     .description {
       color: #ccc;
       margin-bottom: 1.5rem;
     }
+
     .module {
       background-color: #1c1d32;
       padding: 1.2rem;
       border-radius: 10px;
       margin-bottom: 1rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
       transition: 0.3s ease;
     }
+
     .module:hover {
       box-shadow: 0 0 12px #00ffd5, 0 0 22px #00ffd5;
       transform: scale(1.02);
     }
+
     .progress-bar {
       height: 10px;
       background-color: #333;
@@ -40,20 +48,24 @@
       overflow: hidden;
       margin-top: 10px;
     }
+
     .progress-fill {
       height: 100%;
       width: 0%;
       background-color: #00ffd5;
       transition: width 0.5s;
     }
+
     .resources a {
       color: #00ffd5;
       text-decoration: none;
       margin-right: 1rem;
     }
+
     .resources a:hover {
       text-decoration: underline;
     }
+
     .back-btn {
       margin-top: 2rem;
       padding: 0.7rem 1.5rem;
@@ -65,44 +77,57 @@
       cursor: pointer;
       transition: 0.3s ease;
     }
+
     .back-btn:hover {
       box-shadow: 0 0 10px #00ffd5;
       transform: scale(1.05);
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h1>Java Course</h1>
     <p class="description">
-      Welcome to Java! A versatile, object-oriented programming language used in Android development, enterprise systems, and more.
+      Welcome to Java! A versatile, object-oriented programming language used in Android development, enterprise
+      systems, and more.
     </p>
 
     <h2>Modules</h2>
 
     <div class="module">
       <strong>1. Basics & Data Types</strong>
-      <div class="progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 80%;"></div>
+      </div>
     </div>
 
     <div class="module">
       <strong>2. Control Statements & Loops</strong>
-      <div class="progress-bar"><div class="progress-fill" style="width: 60%;"></div></div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 60%;"></div>
+      </div>
     </div>
 
     <div class="module">
       <strong>3. Classes, Objects & OOP</strong>
-      <div class="progress-bar"><div class="progress-fill" style="width: 40%;"></div></div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 40%;"></div>
+      </div>
     </div>
 
     <div class="module">
       <strong>4. Exception Handling</strong>
-      <div class="progress-bar"><div class="progress-fill" style="width: 20%;"></div></div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 20%;"></div>
+      </div>
     </div>
 
     <div class="module">
       <strong>5. Collections & Streams</strong>
-      <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 0%;"></div>
+      </div>
     </div>
 
     <h2>Resources</h2>
@@ -112,7 +137,14 @@
       <a href="https://youtu.be/grEKMHGYyns" target="_blank">YouTube Course</a>
     </div>
 
-    <button class="back-btn" onclick="window.location.href='../index.html' ">⬅ Back to Dashboard</button>
+
   </div>
+
+  <script>
+    document.getElementById("backBtn").onclick = function () {
+      window.location.href = "{% url 'user_dashboard' %}";
+    };
+  </script>
 </body>
+
 </html>

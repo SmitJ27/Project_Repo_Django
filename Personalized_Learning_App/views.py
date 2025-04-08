@@ -87,6 +87,45 @@ def your_achievements(request):
 def view_subjects(request):
     return render(request, 'view_subjects.html')
 
+
+@login_required
+def members(request):
+    return render(request, 'members.html')
+
+
+@login_required
+def analytics(request):
+    return render(request, 'analytics.html')
+
+@login_required
+def classes(request):
+    return render(request, 'classes.html')
+
+@login_required
+def admin_dash(request):
+    if not request.user.is_staff:
+        return redirect('login_view')
+
+    today = now().date()
+    todays_active_users = User.objects.filter(last_login__date=today).count()
+    total_tests_created = Test.objects.count()
+    total_tests_submitted = TestSubmission.objects.count()
+    new_feedback_count = ContactMessage.objects.filter(is_read=False).count()
+
+    context = {
+        'total_users': User.objects.count(),
+        'active_sessions': 150,  
+        'total_courses': 200,
+        'pending_requests': 20,
+        'todays_active_users': todays_active_users,
+        'total_tests_created': total_tests_created,
+        'total_tests_submitted': total_tests_submitted,
+        'new_feedback_count': new_feedback_count, 
+    }
+
+    return render(request, 'admin_dash.html', context)
+
+
 @login_required
 def admin_dashboard(request):
     if not request.user.is_staff:
@@ -193,7 +232,7 @@ def admin_login_view(request):
         )
         if user and user.is_staff:
             login(request, user)
-            return redirect('admin_dashboard')
+            return redirect('admin_dash')
         else:
             messages.error(request, "Invalid admin credentials.")
 

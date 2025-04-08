@@ -92,12 +92,11 @@
             color: #fff;
             box-shadow: none;
             outline: none;
-            margin-bottom: 20px; /* Increased margin for spacing between inputs */
+            margin-bottom: 20px;
         }
 
         .signup .inputBx input[type="submit"] {
             width: 100%;
-            background: #0078ff;
             background: linear-gradient(45deg, #ff357a, #fff172);
             border: none;
             cursor: pointer;
@@ -116,7 +115,7 @@
             width: 100%;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             padding: 0 20px;
         }
 
@@ -126,7 +125,24 @@
             font-size: 0.9em;
         }
 
-        /* Animations */
+        .message {
+            text-align: center;
+            color: #ff357a;
+            font-weight: bold;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         @keyframes animate {
             0% {
                 transform: rotate(0deg);
@@ -163,17 +179,12 @@
         <form action="{% url 'register' %}" method="POST">
             {% csrf_token %}
 
-            <!-- Display only the first error message -->
             {% if messages %}
-                <ul style="color: red; list-style-type: none; margin-bottom: 10px;">
-                    <li>{{ messages.0 }}</li>
-                </ul>
-            {% endif %}
-
-            {% if form.non_field_errors %}
-                <ul style="color: red; list-style-type: none; margin-bottom: 10px;">
-                    <li>{{ form.non_field_errors.0 }}</li>
-                </ul>
+                <div class="message">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
             {% endif %}
 
             <div class="inputBx">
@@ -201,12 +212,6 @@
             </div>
         </form>
     </div>
-
-    <!-- JS code for form behavior (if necessary) -->
-    <script>
-        // Add JavaScript functionality if needed
-    </script>
 </body>
-
 
 </html>

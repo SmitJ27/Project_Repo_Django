@@ -126,31 +126,6 @@ def admin_dash(request):
     return render(request, 'admin_dash.html', context)
 
 
-# @login_required
-# def admin_dashboard(request):
-#     if not request.user.is_staff:
-#         return redirect('login_view')
-
-#     today = now().date()
-#     todays_active_users = User.objects.filter(last_login__date=today).count()
-#     total_tests_created = Test.objects.count()
-#     total_tests_submitted = TestSubmission.objects.count()
-#     new_feedback_count = ContactMessage.objects.filter(is_read=False).count()
-
-#     context = {
-#         'total_users': User.objects.count(),
-#         'active_sessions': 150,  
-#         'total_courses': 200,
-#         'pending_requests': 20,
-#         'todays_active_users': todays_active_users,
-#         'total_tests_created': total_tests_created,
-#         'total_tests_submitted': total_tests_submitted,
-#         'new_feedback_count': new_feedback_count, 
-#     }
-
-#     return render(request, 'admin_dashboard.html', context)
-
-
 #Contact us form
 def contact(request):
     if request.method == "POST":
@@ -189,56 +164,10 @@ def view_feedbacks(request):
     })
 
 
-# def register(request):
-#     if request.method == 'POST':
-#         form = RegistrationForm(request.POST)
-        
-#         if form.is_valid():
-#             # Get the form data
-#             username = form.cleaned_data['username']
-#             email = form.cleaned_data['email']
-#             password = form.cleaned_data['password']
-            
-#             # Create a new user in the database
-#             try:
-#                 user = User.objects.create_user(username=username, email=email, password=password)
-#                 user.save()  # This saves the user into the auth.User table
-                
-#                 # Show success message and redirect to login page
-#                 messages.success(request, "Account created successfully! Please log in.")
-#                 return redirect('login')  # Adjust with your actual login view URL name
-#             except Exception as e:
-#                 messages.error(request, f"Error saving your data: {e}")
-#                 return redirect('register')  # Stay on the register page if there was an error
-#         else:
-#             # If form is not valid, re-render the page with error messages
-#             messages.error(request, "There was an error with your form. Please try again.")
-#             return render(request, 'register.html', {'form': form})
-#     else:
-#         # GET request, just show the form
-#         form = RegistrationForm()
-    
-#     return render(request, 'register.html', {'form': form})
-
-
-# def login_view(request):
-#     if request.method == "POST":
-#         user = authenticate(
-#             request,
-#             username=request.POST['username'],
-#             password=request.POST['password']
-#         )
-#         if user:
-#             login(request, user)
-#             return redirect('user_dashboard')
-#         else:
-#             messages.error(request, "Invalid username or password.")
-    
-#     return render(request, 'login.html')
-
-
 def register(request):
+    attempted = False
     if request.method == 'POST':
+        attempted = True
         form = RegistrationForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
@@ -247,13 +176,11 @@ def register(request):
 
             try:
                 User.objects.create_user(username=username, email=email, password=password)
-                messages.success(request, "Account created successfully! Please log in.")
-                return redirect('login_view')  # Make sure 'login_view' matches your actual URL name
+                return redirect('login_view')
             except Exception as e:
                 messages.error(request, "Something went wrong while creating your account.")
                 return redirect('register')
         else:
-            # Only show the first non-field error (like "Passwords don't match", "Email exists", etc.)
             errors = form.non_field_errors()
             if errors:
                 messages.error(request, errors[0])
@@ -262,7 +189,9 @@ def register(request):
             return redirect('register')
     else:
         form = RegistrationForm()
-    return render(request, 'register.html', {'form': form})
+    
+    return render(request, 'register.html', {'form': form, 'attempted': attempted})
+
 
 def login_view(request):
     attempted = False

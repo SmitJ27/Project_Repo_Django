@@ -18,7 +18,6 @@ from .models import Test, TestSubmission, ContactMessage
 from .forms import RegistrationForm
 
 
-
 # Configure GenAI API
 load_dotenv()
 api_key = os.getenv("API_KEY")
@@ -326,13 +325,26 @@ def submit_test(request):
     if request.method == "POST":
         mcqs = request.session.get("mcqs", [])
         test_submission = []
-        incorrect_answers = {}
-        
-        # Process each question
+
+        website_links = {
+            'python': {
+                'w3schools': 'https://www.w3schools.com/python/',
+                'geeksforgeeks': 'https://www.geeksforgeeks.org/python-programming-language-tutorial/'
+            },
+            'java': {
+                'w3schools': 'https://www.w3schools.com/java/java_intro.asp',
+                'geeksforgeeks': 'https://www.geeksforgeeks.org/java/?ref=ghm'
+            }
+        }
+
+        # Get the topic from the first MCQ (assuming all MCQs belong to the same topic)
+        topic = mcqs[0].get('topic', 'unknown').lower() if mcqs else 'unknown'
+        links = website_links.get(topic, {})
+
         for idx, mcq in enumerate(mcqs, start=1):
             user_answer = request.POST.get(f"q{idx}", "")
-            topic = mcq.get('topic', 'Unknown')
             test = Test.objects.filter(user=request.user, topic=topic).order_by('-created_at').first()
+
             test_submission.append({
                 "question": mcq["question"],
                 "options": mcq["options"],
@@ -341,44 +353,43 @@ def submit_test(request):
                 "marks": mcq["marks"],
                 "topic": topic
             })
-            if user_answer != mcq["correct_answer"]:
-                incorrect_answers[topic] = incorrect_answers.get(topic, 0) + 1
-
-        weakness_report = "<br>".join([f"- {topic} ({count} wrong)" for topic, count in incorrect_answers.items()]) or "No weaknesses identified."
 
         analysis_response = model.generate_content(f"Analyze: {json.dumps(test_submission, indent=2)}")
         formatted_analysis = analysis_response.text.strip().replace("\n", "<br>")
 
-        study_material = {topic: fetch_study_material(topic) for topic in incorrect_answers}
-        youtube_links = [{'topic': topic, 'url': f"https://www.youtube.com/results?search_query={topic.replace(' ', '+')}"} for topic in incorrect_answers]
-        google_links = [{'topic': topic, 'url': f"https://www.google.com/search?q={topic.replace(' ', '+')}"} for topic in incorrect_answers]
+        # Prepare dummy placeholders for now if needed
+        study_material = {topic: fetch_study_material(topic)}
+        youtube_links = [{'topic': topic, 'url': f"https://www.youtube.com/results?search_query={topic.replace(' ', '+')}"}]
+        google_links = [{'topic': topic, 'url': f"https://www.google.com/search?q={topic.replace(' ', '+')}"}]
 
         request.session["test_report"] = {
             "analysis": formatted_analysis,
-            "weakness_report": weakness_report,
             "study_material": study_material,
             "youtube_links": youtube_links,
             "google_links": google_links,
         }
 
         if test:
-            TestSubmission.objects.create(test=test, user=request.user)  
+            TestSubmission.objects.create(test=test, user=request.user)
 
         return render(request, "test_result.html", {
             "analysis": formatted_analysis,
-            "weakness_report": weakness_report,
             "study_material": study_material,
             "youtube_links": youtube_links,
             "google_links": google_links,
+            "website_links": links,
+            "topic": topic,
         })
 
     return render(request, "test_result.html", {
         "analysis": "No analysis available yet.",
-        "weakness_report": "Please submit the test.",
         "study_material": {},
         "youtube_links": [],
         "google_links": [],
+        "website_links": {},
+        "topic": "unknown"
     })
+
 
 #PDF generation
 def generate_pdf(request):

@@ -169,11 +169,20 @@
                 <h5>{{ topic }}</h5>
                 <p><strong>Topic Overview:</strong></p>
                 <pre>{{ material }}</pre>
-                <p><strong>Further Learning Resources:</strong></p>
+
+                {% if website_links %}
+                <p><strong>Further Learning Resources for {{ topic|title }}:</strong></p>
                 <ul>
-                    <li>Books: <a href="https://example.com">Head First Java</a>, <a href="https://example.com">Effective Java</a></li>
-                    <li>Websites: <a href="https://example.com">Java Tutorials</a></li>
+                    <li>Websites:
+                        {% for name, url in website_links.items %}
+                            <a href="{{ url }}" target="_blank">{{ name|capfirst }}</a>{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </li>
                 </ul>
+                {% else %}
+                <p>No websites available for this topic.</p>
+                {% endif %}
+
                 <!-- YouTube Link -->
                 {% for youtube in youtube_links %}
                     {% if youtube.topic == topic %}
@@ -190,17 +199,14 @@
         {% endfor %}
     </div>
 
-
     <!-- Button container using flexbox to align both buttons side by side -->
     <div class="d-flex justify-content-center mt-4">
-        <!-- This is 'Download' Button -->
+        <!-- 'Download' Button -->
         <a href="{% url 'generate_pdf' %}" class="btn btn-success custom-btn mx-2">Download Report as PDF</a>
 
-        <!-- and this is'Return to dashboard' Button -->
+        <!-- 'Return to dashboard' Button -->
         <a href="{% url 'user_dashboard' %}" class="btn btn-success custom-btn mx-2">Return to dashboard</a>
     </div>
-
-
 
     <!-- Button to Retake Test -->
     <div class="text-center mt-5">
@@ -208,5 +214,6 @@
     </div>
 
 </body>
+
 </html>
 

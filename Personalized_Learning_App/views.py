@@ -215,12 +215,16 @@ def login_view(request):
             login(request, user)
             return redirect('user_dashboard')
         else:
+            storage = messages.get_messages(request)
+            list(storage) 
             messages.error(request, "Invalid username or password.")
     
     return render(request, 'login.html', {'attempted': attempted})
 
 def admin_login_view(request):
+    attempted = False
     if request.method == "POST":
+        attempted = True
         user = authenticate(
             request,
             username=request.POST['username'],
@@ -231,8 +235,9 @@ def admin_login_view(request):
             return redirect('admin_dash')
         else:
             messages.error(request, "Invalid admin credentials.")
+    
+    return render(request, 'admin_login.html', {'attempted': attempted})
 
-    return render(request, 'admin_login.html')
 
 def user_logout(request):
     logout(request)

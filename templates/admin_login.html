@@ -127,6 +127,14 @@
             margin-bottom: 5px;
         }
 
+        .message {
+            text-align: center;
+            color: #ff357a;
+            font-weight: bold;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+
         /* Animations */
         @keyframes animate {
             0% {
@@ -151,38 +159,42 @@
 </head>
 
 <body>
-    <!-- Full Background Animation -->
     <div class="square">
-        <i></i>
-        <i></i>
-        <i></i>
-    </div>
+        <i style="--clr:#00ff0a;"></i>
+        <i style="--clr:#ff0057;"></i>
+        <i style="--clr:#fffd44;"></i>
 
-    <!-- Admin Login Form Section -->
-    <div class="login">
-        <h2>Admin Login</h2>
-        <form action="{% url 'admin_login' %}" method="POST">
+        <!-- Login Form -->
+        <form method="POST" class="login" id="login-form">
             {% csrf_token %}
-            
-            <!-- Username Input Field -->
+            <h2>Login</h2>
+
+            {% if messages %}
+            <div class="message-container">
+                {% for message in messages %}
+                {% if forloop.first %}
+                <div class="message {{ message.tags }}">{{ message }}</div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+
             <div class="inputBx">
                 <label for="username">Username</label>
                 <input type="text" name="username" id="username" placeholder="Enter your username" required />
             </div>
-            
-            <!-- Password Input Field -->
+
             <div class="inputBx">
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" placeholder="Enter your password" required />
             </div>
-            
-            <!-- Submit Button -->
+
             <div class="inputBx">
                 <input type="submit" value="Login" />
             </div>
 
             <!-- Additional Links -->
-             {% comment %}
+            {% comment %}
             <div class="links">
                 <a href="#">Forgot Password?</a>
                 <a href="{% url 'register' %}">Don't have an account? Register</a>
